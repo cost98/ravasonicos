@@ -15,11 +15,11 @@ const config: Config = {
           lighter: '#1A1A1A',
           card: '#121212',
         },
-        // Single neon accent - Electric Green
+        // Single neon accent - Electric Pink
         neon: {
-          DEFAULT: '#00FF88',
-          glow: 'rgba(0, 255, 136, 0.5)',
-          dim: 'rgba(0, 255, 136, 0.2)',
+          DEFAULT: '#FF2F8E',
+          glow: 'rgba(255, 47, 142, 0.5)',
+          dim: 'rgba(255, 47, 142, 0.2)',
         },
         // Neutral grays
         neutral: {
@@ -39,8 +39,8 @@ const config: Config = {
         display: ['Montserrat', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        neon: '0 0 20px rgba(0, 255, 136, 0.5)',
-        'neon-lg': '0 0 40px rgba(0, 255, 136, 0.6)',
+        neon: '0 0 20px rgba(255, 47, 142, 0.5)',
+        'neon-lg': '0 0 40px rgba(255, 47, 142, 0.6)',
       },
       backgroundImage: {
         'grain': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E\")",
@@ -52,8 +52,8 @@ const config: Config = {
       },
       keyframes: {
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(0, 255, 136, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(255, 47, 142, 0.3)' },
+          '100%': { boxShadow: '0 0 40px rgba(255, 47, 142, 0.6)' },
         },
       },
     },

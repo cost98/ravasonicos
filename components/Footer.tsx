@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaInstagram, FaTiktok, FaYoutube, FaSpotify, FaHeart } from 'react-icons/fa';
+import { FaInstagram, FaTiktok, FaYoutube, FaHeart } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,14 +10,12 @@ export default function Footer() {
     { name: 'Instagram', icon: FaInstagram, url: '#' },
     { name: 'TikTok', icon: FaTiktok, url: '#' },
     { name: 'YouTube', icon: FaYoutube, url: '#' },
-    { name: 'Spotify', icon: FaSpotify, url: '#' },
   ];
 
   const quickLinks = [
     { name: 'Tour', href: '#tour' },
-    { name: 'Música', href: '#music' },
-    { name: 'Merch', href: '#merch' },
-    { name: 'Contacto', href: '#contact' },
+    { name: 'Musica', href: '#music' },
+    { name: 'Contatti', href: '#contact' },
     { name: 'Press Kit', href: '#' },
   ];
 
@@ -38,7 +36,7 @@ export default function Footer() {
               RAVASONICOS
             </h3>
             <p className="text-white/60 mb-4">
-              El sonido que vibra. Rock Latino desde el corazón.
+              Il suono che vibra. Rock Latino dal cuore.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -64,7 +62,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="text-xl font-bold text-secondary mb-4">
-              Links Rápidos
+              Link Rapidi
             </h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
@@ -94,7 +92,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="text-xl font-bold text-secondary mb-4">
-              Contacto
+              Contatti
             </h4>
             <ul className="space-y-2 text-white/60">
               <li>
@@ -104,7 +102,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <span className="text-white/40">Press:</span><br />
+                <span className="text-white/40">Stampa:</span><br />
                 <a href="mailto:press@ravasonicos.com" className="hover:text-primary transition-colors">
                   press@ravasonicos.com
                 </a>
@@ -122,20 +120,20 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-white/40 text-sm text-center md:text-left">
-            © {currentYear} Ravasonicos. Todos los derechos reservados.
+            © {currentYear} Ravasonicos. Tutti i diritti riservati.
           </p>
           
           <div className="flex gap-6 text-sm text-white/40">
             <a href="#" className="hover:text-primary transition-colors">
-              Política de Privacidad
+              Privacy Policy
             </a>
             <a href="#" className="hover:text-primary transition-colors">
-              Términos de Uso
+              Termini d&apos;Uso
             </a>
           </div>
 
           <p className="text-white/40 text-sm flex items-center gap-2">
-            Hecho con <FaHeart className="text-primary text-xs" /> para el rock
+            Fatto con <FaHeart className="text-primary text-xs" /> per il rock
           </p>
         </motion.div>
       </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +20,8 @@ export default function Header() {
   const navItems = [
     { name: 'News', href: '#hero' },
     { name: 'Tour', href: '#tour' },
-    { name: 'Música', href: '#music' },
-    { name: 'Merch', href: '#merch' },
-    { name: 'Contacto', href: '#contact' },
+    { name: 'Musica', href: '#music' },
+    { name: 'Contatti', href: '#contact' },
   ];
 
   const handleClick = (href: string) => {
@@ -43,11 +43,17 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
-            className="text-2xl font-display font-bold text-primary cursor-pointer"
+            className="cursor-pointer"
             whileHover={{ scale: 1.05 }}
             onClick={() => handleClick('#hero')}
           >
-            RAVASONICOS
+            <Image
+              src="/scritta.png"
+              alt="Ravasónicos"
+              width={900}
+              height={225}
+              className="h-40 w-auto"
+            />
           </motion.div>
 
           {/* Desktop Menu */}

@@ -21,6 +21,26 @@ Per utilizzare la pipeline di deploy automatico su Altervista, devi configurare 
 3. Clicca su **New repository secret**
 4. Aggiungi i tre secrets sopra indicati
 
+### ⚠️ IMPORTANTE: Abilitare accesso FTP internazionale
+
+**Altervista blocca le connessioni FTP da nazioni non autorizzate.**
+
+Per permettere a GitHub Actions di connettersi:
+
+1. Accedi al **Pannello di Controllo Altervista**
+2. Vai su **Risorse** → **File Manager / FTP**
+3. Clicca su **Gestione accessi FTP**
+4. Nella sezione "Nazioni consentite":
+   - **Opzione 1 (consigliata)**: Abilita almeno **Stati Uniti** e **Europa** (dove si trovano i server GitHub)
+   - **Opzione 2**: Abilita **Tutti i paesi** (meno sicuro ma più semplice)
+5. Salva le modifiche
+
+**Senza questa configurazione, riceverai l'errore:**
+```
+FTPError: 530 Autenticazione fallita. Accedi al pannello di controllo di AlterVista 
+e aggiungi la nazione da cui ti stai connettendo tra quelle consentite.
+```
+
 ## Funzionamento
 
 La pipeline si attiva automaticamente:

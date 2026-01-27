@@ -8,47 +8,83 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
-      {/* Subtle grain texture */}
-      <div className="absolute inset-0 bg-grain"></div>
-
-      {/* Logo as background */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10">
+      {/* Sfondo immagine */}
+      <div className="absolute inset-0">
         <Image
-          src="/logo.jpg"
-          alt="Background Logo"
-          width={1200}
-          height={400}
-          className="object-contain blur-sm"
+          src="/sfondo.png"
+          alt="Background"
+          fill
+          className="object-cover opacity-60"
+          priority
         />
       </div>
 
-      {/* Radial gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-dark/80 to-dark"></div>
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
 
-      {/* Subtle animated particles */}
+      {/* Animated light beams */}
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+        {[15, 35, 55, 75, 85].map((pos, i) => (
           <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-neon/20 rounded-full"
+            key={`beam-${i}`}
+            className="absolute w-32 h-full origin-top"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${pos}%`,
+              top: '0',
+              background: `linear-gradient(to bottom, rgba(255, 47, 142, ${0.15 + i * 0.05}) 0%, transparent 70%)`,
+              clipPath: 'polygon(45% 0%, 55% 0%, 60% 100%, 40% 100%)',
+              filter: 'blur(8px)',
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.5, 0.2],
+              rotateZ: [0, 4, -4, 0],
+              opacity: [0.3, 0.7, 0.3],
+              scaleX: [1, 1.2, 1],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 6 + i * 0.8,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: i * 0.4,
+              ease: 'easeInOut',
             }}
           />
         ))}
       </div>
+
+      {/* Floating light particles */}
+      <div className="absolute inset-0">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={`particle-${i}`}
+            className="absolute rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${30 + Math.random() * 70}%`,
+              width: `${3 + Math.random() * 6}px`,
+              height: `${3 + Math.random() * 6}px`,
+              background: i % 2 === 0 ? '#FF2F8E' : '#FFB6D9',
+              boxShadow: `0 0 ${10 + Math.random() * 20}px ${i % 2 === 0 ? 'rgba(255, 47, 142, 0.6)' : 'rgba(255, 182, 217, 0.6)'}`,
+              filter: 'blur(1px)',
+            }}
+            animate={{
+              y: [0, -100 - Math.random() * 150, 0],
+              x: [-20 + Math.random() * 40, 20 - Math.random() * 40, -20 + Math.random() * 40],
+              opacity: [0, 0.9, 0],
+              scale: [0.5, 1.2, 0.5],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: 'easeInOut',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Vignette effect */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/60" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
@@ -59,12 +95,11 @@ export default function Hero() {
           className="mb-8"
         >
           <Image
-            src="/logo.jpg"
+            src="/logo_senza_sfondo.png"
             alt="Jubimm y Los Ravasónicos Logo"
             width={500}
             height={170}
-            className="mx-auto drop-shadow-[0_0_40px_rgba(0,255,136,0.3)] brightness-110 rounded-none border-0"
-            style={{ border: 'none', outline: 'none' }}
+            className="mx-auto drop-shadow-[0_0_40px_rgba(0,255,136,0.3)] brightness-110"
             priority
           />
         </motion.div>
@@ -75,7 +110,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          Electronic Cumbia for Dancefloors & Festivals
+          Cumbia Elettronica per Dancefloor e Festival
         </motion.p>
 
         <motion.div
@@ -89,14 +124,14 @@ export default function Hero() {
             className="group bg-neon hover:bg-neon/90 text-dark font-bold px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-neon hover:shadow-neon-lg flex items-center gap-3"
           >
             <FaPlay className="group-hover:scale-110 transition-transform" size={16} />
-            LISTEN NOW
+            ASCOLTA ORA
           </button>
           <button
             onClick={() => document.querySelector('#tour')?.scrollIntoView({ behavior: 'smooth' })}
             className="border-2 border-neon bg-transparent hover:bg-neon/10 text-neon font-bold px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
           >
             <FaCalendar size={16} />
-            TOUR DATES
+            DATE TOUR
           </button>
         </motion.div>
       </div>

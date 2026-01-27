@@ -43,10 +43,10 @@ export default function Tour() {
           viewport={{ once: true }}
         >
           <h2 className="text-5xl md:text-6xl font-display font-bold text-center mb-4 text-secondary drop-shadow-[0_0_20px_rgba(255,235,59,0.3)]">
-            TOUR DATES
+            DATE TOUR
           </h2>
           <p className="text-center text-white/70 mb-12 text-lg">
-            Vive la experiencia en vivo
+            Vivi l&apos;esperienza dal vivo
           </p>
 
           <div className="space-y-4">

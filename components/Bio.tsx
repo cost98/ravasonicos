@@ -16,11 +16,11 @@ export default function Bio() {
           viewport={{ once: true }}
         >
           <h2 className="text-5xl md:text-6xl font-display font-bold text-center mb-4 text-secondary drop-shadow-[0_0_20px_rgba(255,235,59,0.3)]">
-            LA BANDA
+            LA BAND
           </h2>
           <p className="text-center text-white/70 mb-12 text-lg max-w-3xl mx-auto">
-            Ravasonicos funde la potencia de los ritmos latinos con el alma del rock años 90. 
-            Chitarre distorte y testi che colpiscono dritto al cuore.
+            Ravasonicos fonde la potenza dei ritmi latini con l&apos;anima del rock anni &apos;90. 
+            Chitarre distorte e testi che colpiscono dritto al cuore.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
