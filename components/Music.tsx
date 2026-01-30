@@ -14,13 +14,13 @@ export default function Music() {
   const tracks = [
     { 
       title: 'Lamento Boliviano', 
-      audioUrl: '/track1.mpeg',
-      cover: '/logo_senza_sfondo.png',
+      audioUrl: '/audio/track1.ogg',
+      cover: '/images/logo_senza_sfondo.webp',
     },
     { 
       title: 'El Muelle de San Blas', 
-      audioUrl: '/track2.mpeg',
-      cover: '/logo_senza_sfondo.png',
+      audioUrl: '/audio/track2.ogg',
+      cover: '/images/logo_senza_sfondo.webp',
     },
   ];
 

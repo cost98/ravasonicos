@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Ravasonicos" }],
   icons: {
     icon: [
-      { url: '/rapa.png', sizes: '32x32', type: 'image/png' },
-      { url: '/rapa.png', sizes: '64x64', type: 'image/png' },
-      { url: '/rapa.png', sizes: '128x128', type: 'image/png' },
+      { url: '/images/rapa.webp', sizes: '32x32', type: 'image/webp' },
+      { url: '/images/rapa.webp', sizes: '64x64', type: 'image/webp' },
+      { url: '/images/rapa.webp', sizes: '128x128', type: 'image/webp' },
     ],
-    apple: '/rapa.png',
+    apple: '/images/rapa.webp',
   },
   openGraph: {
     title: "Ravasonicos - Rock Latino",

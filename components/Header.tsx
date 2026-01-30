@@ -48,7 +48,7 @@ export default function Header() {
             onClick={() => handleClick('#hero')}
           >
             <Image
-              src="/scritta.png"
+              src="/images/scritta.webp"
               alt="Ravasónicos"
               width={900}
               height={225}

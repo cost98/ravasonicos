@@ -10,11 +10,11 @@ export default function Bio() {
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   const bandPhotos = [
-    '/band1.jpeg',
-    '/band2.jpeg',
-    '/band3.jpeg',
-    '/band4.jpeg',
-    '/band5.jpeg',
+    '/images/band1.webp',
+    '/images/band2.webp',
+    '/images/band3.webp',
+    '/images/band4.webp',
+    '/images/band5.webp',
   ];
 
   // Posizioni personalizzate per ogni foto

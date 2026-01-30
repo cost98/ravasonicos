@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Sfondo immagine */}
       <div className="absolute inset-0 bg-black">
         <Image
-          src="/sfondo.png"
+          src="/images/sfondo.webp"
           alt="Background"
           fill
           className="object-cover opacity-60"
@@ -98,7 +98,7 @@ export default function Hero() {
           className="mb-8"
         >
           <Image
-            src="/logo_senza_sfondo.png"
+            src="/images/logo_senza_sfondo.webp"
             alt="Jubimm y Los Ravasónicos Logo"
             width={500}
             height={170}
