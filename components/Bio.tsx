@@ -1,9 +1,57 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { FaGuitar, FaDrum, FaMicrophone, FaDownload } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaGuitar, FaDrum, FaMicrophone, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 export default function Bio() {
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+
+  const bandPhotos = [
+    '/band1.jpeg',
+    '/band2.jpeg',
+    '/band3.jpeg',
+    '/band4.jpeg',
+    '/band5.jpeg',
+  ];
+
+  // Posizioni personalizzate per ogni foto
+  const photoPositions = [
+    'object-center',
+    'object-top', 
+    'object-top',
+    'object-center',
+    'object-top',
+  ];
+
+  // Auto-play carousel
+  useEffect(() => {
+    if (!isAutoPlay) return;
+
+    const interval = setInterval(() => {
+      setSelectedImage((prev) => (prev + 1) % bandPhotos.length);
+    }, 3500); // Cambia foto ogni 3.5 secondi
+
+    return () => clearInterval(interval);
+  }, [isAutoPlay, bandPhotos.length]);
+
+  const nextImage = () => {
+    setIsAutoPlay(false);
+    setSelectedImage((prev) => (prev + 1) % bandPhotos.length);
+  };
+
+  const prevImage = () => {
+    setIsAutoPlay(false);
+    setSelectedImage((prev) => (prev - 1 + bandPhotos.length) % bandPhotos.length);
+  };
+
+  const goToImage = (index: number) => {
+    setIsAutoPlay(false);
+    setSelectedImage(index);
+  };
+
   return (
     <section id="bio" className="py-20 px-4 bg-black relative">
       <div className="absolute inset-0 bg-grain opacity-10"></div>
@@ -19,25 +67,98 @@ export default function Bio() {
             LA BAND
           </h2>
           <p className="text-center text-white/70 mb-12 text-lg max-w-3xl mx-auto">
-            Ravasonicos fonde la potenza dei ritmi latini con l&apos;anima del rock anni &apos;90. 
-            Chitarre distorte e testi che colpiscono dritto al cuore.
+            Rock Latino anni &apos;90 che batte forte nel cuore del nuovo millennio. 
+            Un viaggio sonoro dove i riff potenti incontrano l&apos;anima vibrante del soul colombiano, italiano e latinoamericano.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            {/* Image Placeholder */}
+            {/* Carousel */}
             <motion.div
-              className="aspect-square bg-gradient-to-br from-primary/20 via-secondary/20 to-cta/20 rounded-lg border-2 border-primary/50 flex items-center justify-center overflow-hidden"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              className="space-y-4"
             >
-              <div className="text-center p-8">
-                <FaGuitar className="text-6xl text-primary/50 mx-auto mb-4" />
-                <p className="text-white/60">Band Photo</p>
-                <p className="text-white/40 text-sm mt-2">
-                  Agregar foto promocional
-                </p>
+              {/* Main Carousel */}
+              <div className="aspect-square relative rounded-lg overflow-hidden border-2 border-primary/50 shadow-[0_0_30px_rgba(255,0,255,0.2)] group">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={selectedImage}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative w-full h-full"
+                  >
+                    <Image
+                      src={bandPhotos[selectedImage]}
+                      alt="Ravasonicos Band"
+                      fill
+                      className={`object-cover ${photoPositions[selectedImage]} grayscale hover:grayscale-0 transition-all duration-500`}
+                      priority={selectedImage === 0}
+                      quality={80}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-neon hover:text-black hover:scale-110"
+                >
+                  <FaChevronLeft size={20} />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-neon hover:text-black hover:scale-110"
+                >
+                  <FaChevronRight size={20} />
+                </button>
+
+                {/* Auto-play indicator */}
+                <div className="absolute top-4 right-4">
+                  <button
+                    onClick={() => setIsAutoPlay(!isAutoPlay)}
+                    className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm transition-all ${
+                      isAutoPlay 
+                        ? 'bg-neon/80 text-black' 
+                        : 'bg-white/20 text-white hover:bg-white/30'
+                    }`}
+                  >
+                    {isAutoPlay ? '▶ Auto' : '⏸ Paused'}
+                  </button>
+                </div>
+              </div>
+
+              {/* Dots Navigation */}
+              <div className="flex justify-center gap-2">
+                {bandPhotos.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToImage(index)}
+                    className="group relative"
+                  >
+                    <div className={`w-12 h-2 rounded-full transition-all ${
+                      selectedImage === index
+                        ? 'bg-neon shadow-[0_0_10px_rgba(255,0,255,0.5)]'
+                        : 'bg-white/20 hover:bg-white/40'
+                    }`}>
+                      {/* Progress bar for auto-play */}
+                      {selectedImage === index && isAutoPlay && (
+                        <motion.div
+                          className="h-full bg-white/50 rounded-full"
+                          initial={{ width: '0%' }}
+                          animate={{ width: '100%' }}
+                          transition={{ duration: 3.5, ease: 'linear' }}
+                        />
+                      )}
+                    </div>
+                  </button>
+                ))}
               </div>
             </motion.div>
 
@@ -51,15 +172,21 @@ export default function Bio() {
             >
               <div className="space-y-4 text-white/80 text-lg">
                 <p>
-                  Nacidos en el underground del rock latino, Ravasonicos trae de vuelta 
-                  la energía cruda y auténtica de los años 90.
+                  Nati dalla passione per il rock latinoamericano degli anni &apos;90, 
+                  <span className="text-neon font-semibold"> Ravasonicos</span> porta avanti l&apos;eredità 
+                  delle band leggendarie con uno sguardo contemporaneo.
                 </p>
                 <p>
-                  Con guitarras distorsionadas, ritmos que hacen vibrar el suelo y letras 
-                  que hablan directo al corazón, cada show es una experiencia que no se olvida.
+                  Il nostro nome unisce <span className="text-secondary font-semibold">&quot;Ravanelli&quot;</span> (dall&apos;energia 
+                  ravanellante del rock) e <span className="text-secondary font-semibold">&quot;Sonicos&quot;</span> (dal 
+                  suono che viaggia fino al profondo dell&apos;anima), creando un ponte tra passato e presente.
                 </p>
-                <p className="text-primary font-semibold">
-                  &ldquo;El sonido que vibra&rdquo; no es solo un slogan, es una promesa.
+                <p>
+                  Con chitarre distorte, ritmi che fanno vibrare il suolo e testi 
+                  che parlano dritto al cuore, ogni show è un&apos;esperienza indimenticabile.
+                </p>
+                <p className="text-primary font-semibold text-xl">
+                  &ldquo;El sonido que vibra&rdquo; non è solo uno slogan, è una promessa.
                 </p>
               </div>
 
@@ -84,26 +211,7 @@ export default function Bio() {
             </motion.div>
           </div>
 
-          {/* Press Kit Download */}
-          <motion.div
-            className="bg-gradient-to-r from-primary/10 via-secondary/10 to-cta/10 border-2 border-primary/30 rounded-lg p-8 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Press Kit Electrónico
-            </h3>
-            <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-              Para promotores, medios y profesionales de la industria. 
-              Descarga nuestro EPK completo con fotos, bio y ficha técnica.
-            </p>
-            <button className="bg-secondary hover:bg-secondary-600 text-black font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3 mx-auto shadow-lg shadow-secondary/50">
-              <FaDownload />
-              DESCARGAR EPK (PDF)
-            </button>
-          </motion.div>
+
         </motion.div>
       </div>
     </section>

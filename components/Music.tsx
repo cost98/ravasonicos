@@ -2,33 +2,25 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaPlay, FaPause } from 'react-icons/fa';
+import { FaPlay, FaPause, FaSpotify, FaApple, FaYoutube } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Music() {
   const [playing, setPlaying] = useState<number | null>(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const tracks = [
     { 
-      title: 'Cumbia Eléctrica', 
-      duration: '3:42',
-      audioUrl: '/cumbia-electrica.mp3',
-      artwork: '/artwork1.jpg', // Aggiungi le tue immagini in /public
-      gradient: 'from-neon/40 to-purple-500/40',
+      title: 'Lamento Boliviano', 
+      audioUrl: '/track1.mpeg',
+      cover: '/logo_senza_sfondo.png',
     },
     { 
-      title: 'Noche Tropical', 
-      duration: '4:15',
-      audioUrl: '/noche-tropical.mp3',
-      artwork: '/artwork2.jpg',
-      gradient: 'from-blue-500/40 to-neon/40',
-    },
-    { 
-      title: 'Ritmo Salvaje', 
-      duration: '3:58',
-      audioUrl: '/ritmo-salvaje.mp3',
-      artwork: '/artwork3.jpg',
-      gradient: 'from-purple-500/40 to-pink-500/40',
+      title: 'El Muelle de San Blas', 
+      audioUrl: '/track2.mpeg',
+      cover: '/logo_senza_sfondo.png',
     },
   ];
 
@@ -42,10 +34,36 @@ export default function Music() {
         audioRef.current.currentTime = 0;
       }
       audioRef.current = new Audio(tracks[index].audioUrl);
+      
+      audioRef.current.addEventListener('timeupdate', () => {
+        setCurrentTime(audioRef.current?.currentTime || 0);
+      });
+      
+      audioRef.current.addEventListener('loadedmetadata', () => {
+        setDuration(audioRef.current?.duration || 0);
+      });
+      
       audioRef.current.play();
       setPlaying(index);
-      audioRef.current.onended = () => setPlaying(null);
+      audioRef.current.onended = () => {
+        setPlaying(null);
+        setCurrentTime(0);
+      };
     }
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const time = parseFloat(e.target.value);
+    setCurrentTime(time);
+    if (audioRef.current) {
+      audioRef.current.currentTime = time;
+    }
+  };
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
   };
 
   useEffect(() => {
@@ -58,115 +76,184 @@ export default function Music() {
   }, []);
 
   return (
-    <section id="music" className="py-24 px-4 bg-black relative overflow-hidden">
+    <section id="music" className="py-20 px-4 bg-black relative">
       <div className="absolute inset-0 bg-grain opacity-10"></div>
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl md:text-6xl font-display font-bold text-center mb-4 text-white">
-            MUSICA
+          <h2 className="text-5xl md:text-6xl font-display font-bold text-center mb-4 text-secondary drop-shadow-[0_0_20px_rgba(255,235,59,0.3)]">
+            ASCOLTA
           </h2>
-          <div className="w-20 h-1 bg-neon mx-auto mb-16"></div>
+          <p className="text-center text-white/70 mb-12 text-lg max-w-3xl mx-auto">
+            Il nostro sound che fonde rock e ritmi latini
+          </p>
 
-          {/* Cards Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Music Players */}
+          <div className="space-y-4 mb-16">
             {tracks.map((track, index) => (
               <motion.div
                 key={index}
-                className="group relative cursor-pointer"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.15, duration: 0.6 }}
                 viewport={{ once: true }}
-                onClick={() => handlePlayPause(index)}
               >
-                {/* Card Container */}
-                <div className={`relative aspect-square rounded-2xl overflow-hidden border-2 transition-all duration-500 ${
-                  playing === index ? 'border-neon shadow-neon-lg scale-105' : 'border-white/10 hover:border-neon/50'
+                <div className={`relative bg-gradient-to-r from-primary/5 via-secondary/5 to-cta/5 border-2 rounded-xl overflow-hidden transition-all duration-300 ${
+                  playing === index 
+                    ? 'border-neon shadow-neon' 
+                    : 'border-white/10 hover:border-white/20'
                 }`}>
                   
-                  {/* Artwork Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${track.gradient}`}>
-                    {/* Placeholder per artwork - sostituisci con Image quando hai le foto */}
-                    <div className="w-full h-full flex items-center justify-center text-white/20 text-8xl">
-                      ♫
+                  <div className="relative p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      
+                      {/* Album Cover */}
+                      <div className="relative w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-black/30">
+                        <Image
+                          src={track.cover}
+                          alt={track.title}
+                          fill
+                          className="object-cover"
+                          quality={70}
+                          sizes="64px"
+                        />
+                      </div>
+
+                      {/* Play/Pause Button */}
+                      <button
+                        onClick={() => handlePlayPause(index)}
+                        className={`flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
+                          playing === index
+                            ? 'bg-primary text-white shadow-[0_0_20px_rgba(255,0,255,0.5)]'
+                            : 'bg-white/10 text-white hover:bg-white/20'
+                        }`}
+                      >
+                        {playing === index ? (
+                          <FaPause size={18} />
+                        ) : (
+                          <FaPlay size={18} className="ml-0.5" />
+                        )}
+                      </button>
+
+                      {/* Track Info */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-white font-bold text-lg mb-1">{track.title}</h3>
+                        <div className="text-sm text-white/60 space-y-1">
+                          <div>Ravasonicos</div>
+                          <div className="flex items-center gap-2 font-mono">
+                            <span>
+                              {playing === index ? formatTime(currentTime) : '0:00'}
+                            </span>
+                            <span>•</span>
+                            <span>
+                              {playing === index && duration ? formatTime(duration) : '--:--'}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Overlay scuro */}
-                  <div className={`absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300 ${
-                    playing === index ? 'bg-black/20' : ''
-                  }`} />
-
-                  {/* Glow effect quando in play */}
-                  {playing === index && (
-                    <motion.div
-                      className="absolute inset-0 bg-neon/20"
-                      animate={{
-                        opacity: [0.2, 0.4, 0.2],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                      }}
-                    />
-                  )}
-
-                  {/* Play/Pause Button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.button
-                      className={`w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 ${
-                        playing === index 
-                          ? 'bg-neon text-black shadow-neon-lg' 
-                          : 'bg-white/10 backdrop-blur-sm text-white group-hover:bg-neon group-hover:text-black group-hover:scale-110'
-                      }`}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {playing === index ? (
-                        <FaPause size={24} />
-                      ) : (
-                        <FaPlay size={24} className="ml-1" />
-                      )}
-                    </motion.button>
-                  </div>
-
-                  {/* Track Info */}
-                  <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent">
-                    <h3 className="text-white font-bold text-xl mb-1">{track.title}</h3>
-                    <p className="text-white/60 text-sm">{track.duration}</p>
-                  </div>
-
-                  {/* Waveform animation quando in play */}
-                  {playing === index && (
-                    <div className="absolute bottom-20 inset-x-0 px-6">
-                      <div className="flex items-end gap-1 h-12">
-                        {[...Array(20)].map((_, i) => (
+                    {/* Waveform Visualizer - Always visible */}
+                    <div className="relative h-20 bg-black/50 rounded-lg p-4 mb-3">
+                      <div className="flex items-center justify-center gap-1 h-full">
+                        {[...Array(50)].map((_, i) => (
                           <motion.div
                             key={i}
-                            className="flex-1 bg-neon rounded-full"
-                            animate={{
-                              height: [`${20 + Math.random() * 80}%`, `${20 + Math.random() * 80}%`],
+                            className={`w-1 rounded-full transition-colors duration-300 ${
+                              playing === index 
+                                ? 'bg-neon shadow-[0_0_4px_rgba(255,0,255,0.8)]' 
+                                : 'bg-white/40'
+                            }`}
+                            animate={playing === index ? {
+                              height: [`${20 + Math.random() * 60}%`, `${20 + Math.random() * 60}%`],
+                            } : {
+                              height: '30%'
                             }}
                             transition={{
-                              duration: 0.4 + Math.random() * 0.4,
-                              repeat: Infinity,
+                              duration: 0.3 + Math.random() * 0.3,
+                              repeat: playing === index ? Infinity : 0,
                               repeatType: 'reverse',
+                              ease: 'easeInOut',
                             }}
                           />
                         ))}
                       </div>
                     </div>
-                  )}
+
+                    {/* Progress Bar */}
+                    <input
+                      type="range"
+                      min="0"
+                      max={duration || 100}
+                      value={playing === index ? currentTime : 0}
+                      onChange={handleSeek}
+                      disabled={playing !== index}
+                      className="w-full h-1 bg-white/10 rounded-full appearance-none cursor-pointer
+                        [&::-webkit-slider-thumb]:appearance-none
+                        [&::-webkit-slider-thumb]:w-3
+                        [&::-webkit-slider-thumb]:h-3
+                        [&::-webkit-slider-thumb]:rounded-full
+                        [&::-webkit-slider-thumb]:bg-primary
+                        [&::-webkit-slider-thumb]:cursor-pointer
+                        [&::-webkit-slider-thumb]:hover:scale-125
+                        [&::-webkit-slider-thumb]:transition-transform
+                        [&::-webkit-slider-thumb]:shadow-[0_0_10px_rgba(255,0,255,0.5)]
+                        disabled:opacity-50 disabled:cursor-not-allowed"
+                      style={{
+                        background: playing === index && duration > 0
+                          ? `linear-gradient(to right, #ff00ff ${(currentTime / duration) * 100}%, rgba(255,255,255,0.1) ${(currentTime / duration) * 100}%)`
+                          : 'rgba(255,255,255,0.1)'
+                      }}
+                    />
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Streaming Platforms */}
+          <motion.div
+            className="bg-gradient-to-r from-primary/10 via-secondary/10 to-cta/10 border-2 border-primary/30 rounded-lg p-8 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Disponibile su tutte le piattaforme
+            </h3>
+            <p className="text-white/70 mb-6 max-w-2xl mx-auto">
+              Ascolta Ravasonicos ovunque ti trovi
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="#"
+                className="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-[#1DB954]/20 border border-white/20 hover:border-[#1DB954] rounded-lg transition-all duration-300"
+              >
+                <FaSpotify className="text-xl text-white/60 group-hover:text-[#1DB954] transition-colors" />
+                <span className="text-white">Spotify</span>
+              </a>
+              <a
+                href="#"
+                className="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-pink-500/20 border border-white/20 hover:border-pink-500 rounded-lg transition-all duration-300"
+              >
+                <FaApple className="text-xl text-white/60 group-hover:text-pink-400 transition-colors" />
+                <span className="text-white">Apple Music</span>
+              </a>
+              <a
+                href="#"
+                className="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-red-600/20 border border-white/20 hover:border-red-600 rounded-lg transition-all duration-300"
+              >
+                <FaYoutube className="text-xl text-white/60 group-hover:text-red-500 transition-colors" />
+                <span className="text-white">YouTube</span>
+              </a>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

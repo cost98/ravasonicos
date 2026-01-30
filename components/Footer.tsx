@@ -13,10 +13,10 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { name: 'Tour', href: '#tour' },
+    { name: 'Bio', href: '#bio' },
     { name: 'Musica', href: '#music' },
+    { name: 'Tour', href: '#tour' },
     { name: 'Contatti', href: '#contact' },
-    { name: 'Press Kit', href: '#' },
   ];
 
   return (
@@ -32,11 +32,11 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-display font-bold text-primary mb-4">
+            <h3 className="text-3xl font-display font-bold text-neon mb-4">
               RAVASONICOS
             </h3>
             <p className="text-white/60 mb-4">
-              Il suono che vibra. Rock Latino dal cuore.
+              El sonido que vibra. Rock Latino dal cuore.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -45,7 +45,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-2xl text-white/60 hover:text-primary transition-all duration-300 transform hover:scale-125"
+                  className="text-2xl text-white/60 hover:text-neon transition-all duration-300 transform hover:scale-125"
                   aria-label={social.name}
                 >
                   <social.icon />
@@ -69,7 +69,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-white/60 hover:text-primary transition-colors duration-300"
+                    className="text-white/60 hover:text-neon transition-colors duration-300"
                     onClick={(e) => {
                       if (link.href.startsWith('#')) {
                         e.preventDefault();
@@ -96,16 +96,14 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-white/60">
               <li>
-                <span className="text-white/40">Booking:</span><br />
-                <a href="mailto:booking@ravasonicos.com" className="hover:text-primary transition-colors">
-                  booking@ravasonicos.com
+                <span className="text-white/40">Email:</span><br />
+                <a href="mailto:ravasonicos@gmail.com" className="hover:text-neon transition-colors">
+                  ravasonicos@gmail.com
                 </a>
               </li>
               <li>
-                <span className="text-white/40">Stampa:</span><br />
-                <a href="mailto:press@ravasonicos.com" className="hover:text-primary transition-colors">
-                  press@ravasonicos.com
-                </a>
+                <span className="text-white/40">Social:</span><br />
+                <span>@ravasonicos</span>
               </li>
             </ul>
           </motion.div>
@@ -124,16 +122,16 @@ export default function Footer() {
           </p>
           
           <div className="flex gap-6 text-sm text-white/40">
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="#" className="hover:text-neon transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="#" className="hover:text-neon transition-colors">
               Termini d&apos;Uso
             </a>
           </div>
 
           <p className="text-white/40 text-sm flex items-center gap-2">
-            Fatto con <FaHeart className="text-primary text-xs" /> per il rock
+            Fatto con <FaHeart className="text-neon text-xs" /> per il rock
           </p>
         </motion.div>
       </div>

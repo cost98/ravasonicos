@@ -11,13 +11,16 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Sfondo immagine */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black">
         <Image
           src="/sfondo.png"
           alt="Background"
           fill
           className="object-cover opacity-60"
           priority
+          quality={75}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
         />
       </div>
 
@@ -87,7 +90,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/60" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-20 md:pt-0">
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -101,17 +104,10 @@ export default function Hero() {
             height={170}
             className="mx-auto drop-shadow-[0_0_40px_rgba(0,255,136,0.3)] brightness-110"
             priority
+            quality={90}
+            sizes="(max-width: 768px) 90vw, 500px"
           />
         </motion.div>
-
-        <motion.p
-          className="text-xl md:text-2xl text-neutral-300 font-light mb-12 tracking-wide"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-        >
-          Cumbia Elettronica per Dancefloor e Festival
-        </motion.p>
 
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -136,25 +132,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0.3, 0.7, 0.3] }}
-        transition={{
-          delay: 2,
-          duration: 2,
-          repeat: Infinity,
-        }}
-      >
-        <div className="w-6 h-10 border-2 border-neon/50 rounded-full flex items-start justify-center p-2">
-          <motion.div
-            className="w-1.5 h-2 bg-neon rounded-full"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          ></motion.div>
-        </div>
-      </motion.div>
     </section>
   );
 }

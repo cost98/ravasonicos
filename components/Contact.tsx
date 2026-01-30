@@ -116,7 +116,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-cta hover:bg-cta-600 text-black font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cta/50"
+                  className="w-full bg-black border-2 border-neon text-neon font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:bg-neon hover:text-black hover:scale-105 shadow-lg shadow-neon/30"
                 >
                   INVIA MESSAGGIO
                 </button>
@@ -131,36 +131,20 @@ export default function Contact() {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              {/* Booking Info */}
+              {/* Contact Info */}
               <div className="bg-black/50 border-2 border-primary/30 rounded-lg p-6">
                 <h3 className="text-xl font-bold text-secondary mb-4 flex items-center gap-2">
                   <FaEnvelope />
-                  Booking & Ingaggi
+                  Contattaci
                 </h3>
                 <p className="text-white/80 mb-2">
-                  Per concerti, festival ed eventi privati:
+                  Per booking, interviste e richieste generali:
                 </p>
                 <a
-                  href="mailto:booking@ravasonicos.com"
+                  href="mailto:ravasonicos@gmail.com"
                   className="text-primary hover:text-primary-400 font-semibold transition-colors"
                 >
-                  booking@ravasonicos.com
-                </a>
-              </div>
-
-              {/* Press Info */}
-              <div className="bg-black/50 border-2 border-secondary/30 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-secondary mb-4">
-                  Stampa & Media
-                </h3>
-                <p className="text-white/80 mb-2">
-                  Per interviste e materiale promozionale:
-                </p>
-                <a
-                  href="mailto:press@ravasonicos.com"
-                  className="text-primary hover:text-primary-400 font-semibold transition-colors"
-                >
-                  press@ravasonicos.com
+                  ravasonicos@gmail.com
                 </a>
               </div>
 
