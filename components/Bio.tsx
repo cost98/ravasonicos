@@ -95,7 +95,7 @@ export default function Bio() {
                       src={bandPhotos[selectedImage]}
                       alt="Ravasonicos Band"
                       fill
-                      className={`object-cover ${photoPositions[selectedImage]} grayscale hover:grayscale-0 transition-all duration-500`}
+                      className={`object-cover ${photoPositions[selectedImage]} grayscale transition-all duration-500`}
                       priority={selectedImage === 0}
                       quality={80}
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -106,18 +106,6 @@ export default function Bio() {
                 </AnimatePresence>
 
                 {/* Navigation Arrows */}
-                <button
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-neon hover:text-black hover:scale-110"
-                >
-                  <FaChevronLeft size={20} />
-                </button>
-                <button
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-neon hover:text-black hover:scale-110"
-                >
-                  <FaChevronRight size={20} />
-                </button>
 
                 {/* Auto-play indicator */}
                 <div className="absolute top-4 right-4">

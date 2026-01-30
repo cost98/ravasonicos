@@ -29,81 +29,38 @@ export default function Header() {
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
-
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/95 backdrop-blur-sm shadow-lg shadow-primary/20' : 'bg-transparent'
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <motion.div
-            className="cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleClick('#hero')}
-          >
-            <Image
-              src="/images/scritta.webp"
-              alt="Ravasónicos"
-              width={900}
-              height={225}
-              className="h-40 w-auto"
-            />
-          </motion.div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                onClick={() => handleClick(item.href)}
-                className="text-white hover:text-primary transition-colors duration-300 font-medium relative group"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white hover:text-primary transition-colors"
-          >
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-          </button>
+    <header className="w-full bg-black/90 text-white shadow-lg">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between h-24 px-4 relative">
+        {/* Logo grande */}
+        <div className="flex items-center cursor-pointer select-none">
+          <img src="/images/scritta.webp" alt="Ravasónicos" className="h-20 w-auto" />
         </div>
-
-        {/* Mobile Menu */}
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-8">
+          <a href="#hero" className="hover:text-primary transition-colors">News</a>
+          <a href="#tour" className="hover:text-primary transition-colors">Tour</a>
+          <a href="#music" className="hover:text-primary transition-colors">Musica</a>
+          <a href="#contact" className="hover:text-primary transition-colors">Contatti</a>
+        </div>
+        {/* Hamburger mobile */}
+        <button
+          className="md:hidden flex items-center justify-center h-12 w-12 text-white"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Apri menu"
+        >
+          {isOpen ? <FaTimes size={32} /> : <FaBars size={32} />}
+        </button>
+        {/* Mobile menu */}
         {isOpen && (
-          <motion.div
-            className="md:hidden bg-black/98 border-t border-primary/30"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleClick(item.href)}
-                  className="block w-full text-left px-3 py-2 text-white hover:text-primary hover:bg-primary/10 transition-all duration-300"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
-          </motion.div>
+          <div className="absolute top-full left-0 right-0 bg-black/95 border-t border-primary/30 z-40 flex flex-col items-center py-4 space-y-4 md:hidden">
+            <a href="#hero" className="text-white hover:text-primary text-lg" onClick={() => setIsOpen(false)}>News</a>
+            <a href="#tour" className="text-white hover:text-primary text-lg" onClick={() => setIsOpen(false)}>Tour</a>
+            <a href="#music" className="text-white hover:text-primary text-lg" onClick={() => setIsOpen(false)}>Musica</a>
+            <a href="#contact" className="text-white hover:text-primary text-lg" onClick={() => setIsOpen(false)}>Contatti</a>
+          </div>
         )}
       </nav>
-    </motion.header>
+    </header>
   );
 }

@@ -37,9 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased w-full overflow-x-hidden">
         <Header />
-        <main>{children}</main>
+        <main className="w-full overflow-x-hidden">{children}</main>
         <Footer />
       </body>
     </html>
