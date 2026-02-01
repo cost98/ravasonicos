@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaPlay, FaPause, FaSpotify, FaApple, FaYoutube } from 'react-icons/fa';
+import { FaPlay, FaPause, FaYoutube } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function Music() {
@@ -225,32 +225,20 @@ export default function Music() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-4">
-              Disponibile su tutte le piattaforme
+              Seguici su YouTube
             </h3>
             <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-              Ascolta Ravasonicos ovunque ti trovi
+              Scopri i nostri video, live performance e molto altro
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex justify-center">
               <a
-                href="#"
-                className="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-[#1DB954]/20 border border-white/20 hover:border-[#1DB954] rounded-lg transition-all duration-300"
+                href="https://m.youtube.com/channel/UC-HcJTcyJpeq0GtZqSeN6rw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 px-8 py-4 bg-black border-2 border-neon text-neon font-bold rounded-lg transition-all duration-300 transform hover:bg-neon hover:text-black hover:scale-105 shadow-lg shadow-neon/30"
               >
-                <FaSpotify className="text-xl text-white/60 group-hover:text-[#1DB954] transition-colors" />
-                <span className="text-white">Spotify</span>
-              </a>
-              <a
-                href="#"
-                className="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-pink-500/20 border border-white/20 hover:border-pink-500 rounded-lg transition-all duration-300"
-              >
-                <FaApple className="text-xl text-white/60 group-hover:text-pink-400 transition-colors" />
-                <span className="text-white">Apple Music</span>
-              </a>
-              <a
-                href="#"
-                className="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-red-600/20 border border-white/20 hover:border-red-600 rounded-lg transition-all duration-300"
-              >
-                <FaYoutube className="text-xl text-white/60 group-hover:text-red-500 transition-colors" />
-                <span className="text-white">YouTube</span>
+                <FaYoutube className="text-2xl" />
+                <span>Visita il canale YouTube</span>
               </a>
             </div>
           </motion.div>

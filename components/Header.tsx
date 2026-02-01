@@ -1,40 +1,18 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import Image from 'next/image';
+// Removed unused imports
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navItems = [
-    { name: 'News', href: '#hero' },
-    { name: 'Tour', href: '#tour' },
-    { name: 'Musica', href: '#music' },
-    { name: 'Contatti', href: '#contact' },
-  ];
-
-  const handleClick = (href: string) => {
-    setIsOpen(false);
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
   return (
     <header className="w-full bg-black/90 text-white shadow-lg">
       <nav className="max-w-7xl mx-auto flex items-center justify-between h-24 px-4 relative">
         {/* Logo grande */}
         <div className="flex items-center cursor-pointer select-none">
-          <img src="/images/scritta.webp" alt="Ravasónicos" className="h-20 w-auto" />
+          <img src="/images/scritta.webp" alt="Ravasónicos" className="h-36 w-auto" />
         </div>
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">

@@ -1,15 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaInstagram, FaTiktok, FaYoutube, FaHeart } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaYoutube, FaHeart } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'Instagram', icon: FaInstagram, url: '#' },
-    { name: 'TikTok', icon: FaTiktok, url: '#' },
-    { name: 'YouTube', icon: FaYoutube, url: '#' },
+    { name: 'Instagram', icon: FaInstagram, url: 'https://www.instagram.com/ravasonicos?igsh=NXp3MnRjdHB3ajlv', color: 'hover:text-[#E4405F]' },
+    { name: 'Facebook', icon: FaFacebook, url: 'https://www.facebook.com/ravasonicos/', color: 'hover:text-[#1877F2]' },
+    { name: 'YouTube', icon: FaYoutube, url: 'https://m.youtube.com/channel/UC-HcJTcyJpeq0GtZqSeN6rw', color: 'hover:text-[#FF0000]' },
   ];
 
   const quickLinks = [
@@ -20,7 +20,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black border-t-2 border-primary/30 relative">
+    <footer className="bg-gradient-to-b from-black via-black to-primary/10 relative pt-8">
+      {/* Decorative gradient separator with glow */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-60"></div>
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-neon to-transparent blur-sm"></div>
+      
+      {/* Radial glow effects */}
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-neon/5 rounded-full blur-3xl"></div>
+      
       <div className="absolute inset-0 bg-grain opacity-5"></div>
       
       <div className="max-w-7xl mx-auto px-4 py-12 relative z-10">
@@ -32,9 +40,7 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-display font-bold text-neon mb-4">
-              RAVASONICOS
-            </h3>
+            <img src="/images/scritta.webp" alt="Ravasónicos" className="h-32 w-auto mb-4" />
             <p className="text-white/60 mb-4">
               El sonido que vibra. Rock Latino dal cuore.
             </p>
@@ -45,7 +51,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-2xl text-white/60 hover:text-neon transition-all duration-300 transform hover:scale-125"
+                  className={`text-2xl text-white/60 ${social.color} transition-all duration-300 transform hover:scale-125`}
                   aria-label={social.name}
                 >
                   <social.icon />

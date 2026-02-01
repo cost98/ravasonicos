@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGuitar, FaDrum, FaMicrophone, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaGuitar, FaDrum, FaMicrophone } from 'react-icons/fa';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
@@ -36,16 +36,6 @@ export default function Bio() {
 
     return () => clearInterval(interval);
   }, [isAutoPlay, bandPhotos.length]);
-
-  const nextImage = () => {
-    setIsAutoPlay(false);
-    setSelectedImage((prev) => (prev + 1) % bandPhotos.length);
-  };
-
-  const prevImage = () => {
-    setIsAutoPlay(false);
-    setSelectedImage((prev) => (prev - 1 + bandPhotos.length) % bandPhotos.length);
-  };
 
   const goToImage = (index: number) => {
     setIsAutoPlay(false);

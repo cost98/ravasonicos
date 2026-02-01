@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa';
+import { FaEnvelope, FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -20,9 +20,9 @@ export default function Contact() {
   };
 
   const socialLinks = [
-    { name: 'Instagram', icon: FaInstagram, url: '#', color: 'hover:text-[#E4405F]' },
-    { name: 'TikTok', icon: FaTiktok, url: '#', color: 'hover:text-white' },
-    { name: 'YouTube', icon: FaYoutube, url: '#', color: 'hover:text-[#FF0000]' },
+    { name: 'Instagram', icon: FaInstagram, url: 'https://www.instagram.com/ravasonicos?igsh=NXp3MnRjdHB3ajlv', color: 'hover:text-[#E4405F]' },
+    { name: 'Facebook', icon: FaFacebook, url: 'https://www.facebook.com/ravasonicos/', color: 'hover:text-[#1877F2]' },
+    { name: 'YouTube', icon: FaYoutube, url: 'https://m.youtube.com/channel/UC-HcJTcyJpeq0GtZqSeN6rw', color: 'hover:text-[#FF0000]' },
 
   ];
 
