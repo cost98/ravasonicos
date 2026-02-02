@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Ravasonicos - Rock Latino | El Sonido que Vibra",
@@ -36,11 +34,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className="overflow-x-hidden">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </head>
       <body className="font-sans antialiased w-full overflow-x-hidden">
-        <Header />
         <main className="w-full overflow-x-hidden">{children}</main>
-        <Footer />
       </body>
     </html>
   );
