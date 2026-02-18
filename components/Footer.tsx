@@ -127,11 +127,14 @@ export default function Footer() {
             © {currentYear} Ravasonicos. Tutti i diritti riservati.
           </p>
           
-          <div className="flex gap-6 text-sm text-white/40">
-            <a href="#" className="hover:text-neon transition-colors">
+          <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-white/40 justify-center">
+            <a href="/privacy" className="hover:text-neon transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-neon transition-colors">
+            <a href="/cookie" className="hover:text-neon transition-colors">
+              Informativa Cookie
+            </a>
+            <a href="/termini" className="hover:text-neon transition-colors">
               Termini d&apos;Uso
             </a>
           </div>
