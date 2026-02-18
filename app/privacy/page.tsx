@@ -70,8 +70,9 @@ export default function PrivacyPolicy() {
                     pagine visitate, durata della visita (raccolti automaticamente dai log del server)
                   </li>
                   <li>
-                    <strong>Dati forniti volontariamente:</strong> nome, email e messaggi inviati tramite 
-                    il modulo di contatto
+                    <strong>Dati del modulo di contatto:</strong> nome, email, telefono e messaggio inseriti 
+                    nel form vengono utilizzati esclusivamente per aprire il client email del visitatore 
+                    (tramite protocollo mailto:) senza passare per servizi terzi
                   </li>
                   <li>
                     <strong>Cookie:</strong> per maggiori informazioni consulta la nostra{' '}
@@ -81,7 +82,9 @@ export default function PrivacyPolicy() {
                 <p className="mt-4 text-white/80">
                   <strong>Cosa NON raccogliamo:</strong> non utilizziamo cookie di tracciamento, 
                   cookie analitici (es. Google Analytics) o strumenti di profilazione. Non raccogliamo 
-                  dati sensibili o categorie particolari di dati personali.
+                  dati sensibili o categorie particolari di dati personali. Il modulo di contatto 
+                  non invia dati a server esterni: apre semplicemente il tuo client email precompilando 
+                  i campi.
                 </p>
               </section>
 
@@ -89,9 +92,9 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">4. Finalità del Trattamento</h2>
                 <p>I dati personali sono trattati per le seguenti finalità:</p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
-                  <li>Rispondere alle richieste inviate tramite il modulo di contatto</li>
+                  <li>Facilitare il contatto tramite il modulo (che apre il client email dell'utente)</li>
+                  <li>Rispondere alle richieste inviate via email</li>
                   <li>Migliorare l'esperienza di navigazione e le funzionalità del Sito</li>
-                  <li>Analizzare statistiche di utilizzo del Sito</li>
                   <li>Adempiere agli obblighi di legge</li>
                 </ul>
               </section>
@@ -117,12 +120,17 @@ export default function PrivacyPolicy() {
                     massimo di 7 giorni per motivi di sicurezza
                   </li>
                   <li>
-                    <strong>Messaggi di contatto:</strong> conservati fino alla conclusione della 
-                    richiesta e per un massimo di 2 anni successivi
+                    <strong>Dati del modulo di contatto:</strong> non vengono salvati sul server. 
+                    I dati inseriti nel form vengono utilizzati solo temporaneamente per creare 
+                    il link mailto che apre il client email dell'utente
                   </li>
                   <li>
-                    <strong>Consensi cookie:</strong> conservati nel browser dell'utente fino alla 
-                    loro scadenza o cancellazione manuale
+                    <strong>Email ricevute:</strong> le email inviate tramite il client dell'utente 
+                    sono conservate fino alla conclusione della richiesta e per un massimo di 2 anni successivi
+                  </li>
+                  <li>
+                    <strong>Preferenze localStorage:</strong> conservati nel browser dell'utente fino alla 
+                    loro cancellazione manuale
                   </li>
                 </ul>
                 <p className="mt-4 text-white/80">
@@ -139,9 +147,8 @@ export default function PrivacyPolicy() {
                 </p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>
-                    <strong>Fornitori di servizi essenziali:</strong> hosting del sito web e 
-                    gestione email (Web3Forms per i moduli di contatto). Questi fornitori sono 
-                    vincolati da accordi di riservatezza
+                    <strong>Fornitori di servizi essenziali:</strong> hosting del sito web. 
+                    Questi fornitori sono vincolati da accordi di riservatezza
                   </li>
                   <li>
                     <strong>Obblighi di legge:</strong> quando richiesto dalla legge o da 
@@ -153,8 +160,9 @@ export default function PrivacyPolicy() {
                   </li>
                 </ul>
                 <p className="mt-4 text-white/80">
-                  Tutti i fornitori di servizi sono selezionati con cura e rispettano gli 
-                  standard GDPR per la protezione dei dati.
+                  Le email inviate dai visitatori vengono ricevute direttamente tramite il 
+                  client email del contatto, senza intermediari di terze parti per la 
+                  gestione dei moduli.
                 </p>
               </section>
 
