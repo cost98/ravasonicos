@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -90,6 +91,10 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased w-full overflow-x-hidden">
         <main className="w-full overflow-x-hidden">{children}</main>
+        <Script 
+          src="https://web3forms.com/client/script.js" 
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
