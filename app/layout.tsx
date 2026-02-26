@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieBanner from "@/components/CookieBanner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -92,6 +93,8 @@ export default function RootLayout({
       <body className="font-sans antialiased w-full overflow-x-hidden">
         {/* Google Analytics - caricato solo con consenso */}
         <GoogleAnalytics />
+        {/* Cookie Banner - chiede il consenso al primo accesso */}
+        <CookieBanner />
         <main className="w-full overflow-x-hidden">{children}</main>
       </body>
     </html>

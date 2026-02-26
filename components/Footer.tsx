@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FaInstagram, FaFacebook, FaYoutube, FaHeart } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -128,15 +129,15 @@ export default function Footer() {
           </p>
           
           <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-white/40 justify-center">
-            <a href="/privacy" className="hover:text-neon transition-colors">
+            <Link href="/privacy" className="hover:text-neon transition-colors">
               Privacy Policy
-            </a>
-            <a href="/cookie" className="hover:text-neon transition-colors">
+            </Link>
+            <Link href="/cookie" className="hover:text-neon transition-colors">
               Informativa Cookie
-            </a>
-            <a href="/termini" className="hover:text-neon transition-colors">
+            </Link>
+            <Link href="/termini" className="hover:text-neon transition-colors">
               Termini d&apos;Uso
-            </a>
+            </Link>
           </div>
 
           <p className="text-white/40 text-sm flex items-center gap-2">
