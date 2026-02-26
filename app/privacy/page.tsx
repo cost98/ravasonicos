@@ -75,16 +75,22 @@ export default function PrivacyPolicy() {
                     (tramite protocollo mailto:) senza passare per servizi terzi
                   </li>
                   <li>
-                    <strong>Cookie:</strong> per maggiori informazioni consulta la nostra{' '}
+                    <strong>Cookie Analytics (con consenso):</strong> se acconsenti all'uso di Google Analytics, 
+                    raccogliamo dati anonimizzati sulla tua navigazione per comprendere come i visitatori 
+                    utilizzano il sito e migliorare l'esperienza utente. Per maggiori informazioni consulta la nostra{' '}
+                    <Link href="/cookie" className="text-neon hover:underline">Cookie Policy</Link>
+                  </li>
+                  <li>
+                    <strong>Cookie tecnici:</strong> per maggiori informazioni consulta la nostra{' '}
                     <Link href="/cookie" className="text-neon hover:underline">Cookie Policy</Link>
                   </li>
                 </ul>
                 <p className="mt-4 text-white/80">
-                  <strong>Cosa NON raccogliamo:</strong> non utilizziamo cookie di tracciamento, 
-                  cookie analitici (es. Google Analytics) o strumenti di profilazione. Non raccogliamo 
-                  dati sensibili o categorie particolari di dati personali. Il modulo di contatto 
-                  non invia dati a server esterni: apre semplicemente il tuo client email precompilando 
-                  i campi.
+                  <strong>Cosa NON raccogliamo:</strong> non utilizziamo cookie di profilazione pubblicitaria 
+                  o strumenti di tracciamento invasivi. Non raccogliamo dati sensibili o categorie particolari 
+                  di dati personali. Il modulo di contatto non invia dati a server esterni: apre semplicemente 
+                  il tuo client email precompilando i campi. Google Analytics viene attivato solo con il tuo 
+                  esplicito consenso e i dati raccolti sono anonimizzati.
                 </p>
               </section>
 
@@ -95,6 +101,7 @@ export default function PrivacyPolicy() {
                   <li>Facilitare il contatto tramite il modulo (che apre il client email dell'utente)</li>
                   <li>Rispondere alle richieste inviate via email</li>
                   <li>Migliorare l'esperienza di navigazione e le funzionalità del Sito</li>
+                  <li>Analizzare l'utilizzo del sito tramite Google Analytics (solo con consenso esplicito) per comprendere come i visitatori interagiscono con i contenuti e migliorare i servizi offerti</li>
                   <li>Adempiere agli obblighi di legge</li>
                 </ul>
               </section>
@@ -102,10 +109,14 @@ export default function PrivacyPolicy() {
               <section>
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">5. Base Giuridica</h2>
                 <p>
-                  Il trattamento dei dati personali si basa sul consenso dell'interessato, 
-                  sull'esecuzione di un contratto, sul legittimo interesse del titolare e 
-                  sull'adempimento di obblighi di legge.
+                  Il trattamento dei dati personali si basa sulle seguenti basi giuridiche:
                 </p>
+                <ul className="list-disc pl-6 space-y-2 my-4">
+                  <li><strong>Consenso dell'interessato:</strong> per l'uso di Google Analytics e cookie non tecnici (art. 6.1.a GDPR)</li>
+                  <li><strong>Esecuzione di un contratto:</strong> quando necessario per fornire i servizi richiesti</li>
+                  <li><strong>Legittimo interesse del titolare:</strong> per migliorare i servizi e garantire la sicurezza del sito</li>
+                  <li><strong>Adempimento di obblighi di legge:</strong> quando richiesto dalla normativa vigente</li>
+                </ul>
               </section>
 
               <section>
@@ -129,6 +140,11 @@ export default function PrivacyPolicy() {
                     sono conservate fino alla conclusione della richiesta e per un massimo di 2 anni successivi
                   </li>
                   <li>
+                    <strong>Cookie Google Analytics:</strong> se acconsenti all'uso di Google Analytics, 
+                    i cookie verranno conservati per un massimo di 26 mesi secondo le policy di Google. 
+                    Puoi revocare il consenso in qualsiasi momento
+                  </li>
+                  <li>
                     <strong>Preferenze localStorage:</strong> conservati nel browser dell'utente fino alla 
                     loro cancellazione manuale
                   </li>
@@ -149,6 +165,20 @@ export default function PrivacyPolicy() {
                   <li>
                     <strong>Fornitori di servizi essenziali:</strong> hosting del sito web. 
                     Questi fornitori sono vincolati da accordi di riservatezza
+                  </li>
+                  <li>
+                    <strong>Google Analytics:</strong> solo se acconsenti all'uso di cookie analytics, 
+                    Google LLC riceverà dati anonimizzati sulla navigazione per finalità statistiche. 
+                    Google è certificato Privacy Shield e conforme al GDPR. 
+                    Consulta la{' '}
+                    <a 
+                      href="https://policies.google.com/privacy" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-neon hover:underline"
+                    >
+                      Privacy Policy di Google
+                    </a>
                   </li>
                   <li>
                     <strong>Obblighi di legge:</strong> quando richiesto dalla legge o da 

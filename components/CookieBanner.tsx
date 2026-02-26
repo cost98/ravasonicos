@@ -7,6 +7,7 @@ import Link from 'next/link';
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
 
   useEffect(() => {
     // Verifica se l'utente ha già dato il consenso
@@ -23,9 +24,11 @@ export default function CookieBanner() {
   const acceptAll = () => {
     localStorage.setItem('cookieConsent', JSON.stringify({
       necessary: true,
-      analytics: false, // Per ora false, da attivare se si aggiunge Google Analytics
+      analytics: true, // Accetta Google Analytics
       timestamp: new Date().toISOString()
     }));
+    // Notifica il componente GoogleAnalytics del cambiamento
+    window.dispatchEvent(new Event('cookieConsentChange'));
     setShowBanner(false);
   };
 
@@ -35,6 +38,8 @@ export default function CookieBanner() {
       analytics: false,
       timestamp: new Date().toISOString()
     }));
+    // Notifica il componente GoogleAnalytics del cambiamento
+    window.dispatchEvent(new Event('cookieConsentChange'));
     setShowBanner(false);
   };
 
@@ -44,6 +49,8 @@ export default function CookieBanner() {
       analytics: analytics,
       timestamp: new Date().toISOString()
     }));
+    // Notifica il componente GoogleAnalytics del cambiamento
+    window.dispatchEvent(new Event('cookieConsentChange'));
     setShowBanner(false);
     setShowSettings(false);
   };
@@ -86,9 +93,9 @@ export default function CookieBanner() {
                         Informativa sui Cookie
                       </h3>
                       <p className="text-white/80 text-sm md:text-base leading-relaxed mb-2">
-                        Questo sito utilizza cookie tecnici essenziali per garantire il corretto funzionamento 
-                        e migliorare la tua esperienza di navigazione. Non utilizziamo cookie di profilazione 
-                        o tracciamento.
+                        Questo sito utilizza cookie tecnici essenziali e, con il tuo consenso, Google Analytics 
+                        per comprendere come i visitatori interagiscono con il sito e migliorare l'esperienza utente. 
+                        Non utilizziamo cookie di profilazione pubblicitaria.
                       </p>
                       <div className="flex flex-wrap gap-3 text-sm mt-3">
                         <Link 
@@ -173,22 +180,33 @@ export default function CookieBanner() {
                       </div>
 
                       {/* Cookie Analitici - Disabilitati */}
-                      <div className="bg-white/5 rounded-lg p-4 border border-white/10 opacity-50">
+                      <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex-1">
                             <h4 className="text-white font-semibold mb-1">
-                              Cookie Analitici
+                              Cookie Analitici (Google Analytics)
                             </h4>
                             <p className="text-white/60 text-sm">
-                              Non utilizzati al momento su questo sito.
+                              Ci aiutano a capire come i visitatori utilizzano il sito.
                             </p>
                           </div>
                           <div className="ml-4">
-                            <div className="w-12 h-6 bg-white/20 rounded-full flex items-center px-1">
-                              <div className="w-4 h-4 bg-white/50 rounded-full"></div>
-                            </div>
+                            <button
+                              onClick={() => setAnalyticsEnabled(!analyticsEnabled)}
+                              aria-label={analyticsEnabled ? "Disabilita cookie analytics" : "Abilita cookie analytics"}
+                              className={`w-12 h-6 rounded-full flex items-center transition-all duration-300 ${
+                                analyticsEnabled 
+                                  ? 'bg-primary justify-end' 
+                                  : 'bg-white/20 justify-start'
+                              } px-1`}
+                            >
+                              <div className="w-4 h-4 bg-white rounded-full shadow-md"></div>
+                            </button>
                           </div>
                         </div>
+                        <p className="text-white/40 text-xs mt-2">
+                          Include: Google Analytics per statistiche anonime di utilizzo
+                        </p>
                       </div>
                     </div>
 
@@ -199,10 +217,10 @@ export default function CookieBanner() {
                                  hover:bg-white/20 transition-all duration-300 font-semibold
                                  border border-white/20 hover:border-white/40"
                       >
-                        Salva Solo Necessari
+                        Rifiuta Tutti
                       </button>
                       <button
-                        onClick={() => savePreferences(false)}
+                        onClick={() => savePreferences(analyticsEnabled)}
                         className="flex-1 px-6 py-3 bg-primary text-white rounded-lg 
                                  hover:bg-primary/80 transition-all duration-300 font-semibold
                                  shadow-lg shadow-primary/30 hover:shadow-primary/50"
@@ -216,7 +234,7 @@ export default function CookieBanner() {
                 {/* Info aggiuntiva */}
                 <div className="mt-4 pt-4 border-t border-white/10">
                   <p className="text-white/50 text-xs text-center">
-                    Utilizziamo solo cookie tecnici necessari. Puoi modificare le tue preferenze in qualsiasi momento 
+                    Utilizziamo cookie tecnici necessari e, con il tuo consenso, Google Analytics. Puoi modificare le tue preferenze in qualsiasi momento 
                     visitando la nostra{' '}
                     <Link href="/cookie" className="text-neon hover:underline">
                       Cookie Policy

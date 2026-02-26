@@ -39,13 +39,13 @@ export default function CookiePolicy() {
 
               <div className="bg-neon/10 border border-neon/30 rounded-lg p-6 my-8">
                 <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                  <span className="text-2xl">✓</span>
-                  Nessun Cookie di Tracciamento
+                  <span className="text-2xl">🔒</span>
+                  Privacy Rispettata
                 </h3>
                 <p className="text-white/90 leading-relaxed">
-                  Questo sito web <strong>NON utilizza cookie di tracciamento, profilazione o analytics</strong>. 
-                  Non raccogliamo dati sulla tua navigazione, non vendiamo i tuoi dati a terze parti 
-                  e non utilizziamo tecnologie di tracciamento pubblicitario.
+                  Questo sito web utilizza <strong>Google Analytics solo con il tuo esplicito consenso</strong>. 
+                  Non raccogliamo dati senza permesso, non vendiamo informazioni a terze parti 
+                  e non utilizziamo tecnologie di profilazione pubblicitaria.
                 </p>
               </div>
 
@@ -68,38 +68,70 @@ export default function CookiePolicy() {
                 </p>
 
                 <h3 className="text-xl font-semibold text-white mt-6 mb-3">2.1 Dati Memorizzati Localmente</h3>
-                <p>Le uniche informazioni che il sito può memorizzare nel tuo browser sono:</p>
+                <p>Le informazioni che il sito può memorizzare nel tuo browser sono:</p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>
-                    <strong>Stato di navigazione temporaneo:</strong> per mantenere la sessione 
+                    <strong>Preferenze cookie:</strong> memorizza il tuo consenso all'uso dei cookie analytics (localStorage)
+                  </li>
+                  <li>
+                    <strong>Stato di navigazione temporaneo:</strong> mantiene la sessione 
                     attiva durante la navigazione
                   </li>
                 </ul>
                 <p className="text-white/70 text-sm mt-4">
                   Questi dati rimangono esclusivamente nel tuo browser e non vengono mai 
-                  inviati ai nostri server o a terze parti.
+                  inviati ai nostri server o a terze parti (eccetto Google Analytics se acconsenti).
                 </p>
 
-                <h3 className="text-xl font-semibold text-white mt-6 mb-3">2.2 Cosa NON Utilizziamo</h3>
+                <h3 className="text-xl font-semibold text-white mt-6 mb-3">2.2 Cookie Analytics (con consenso)</h3>
+                <p className="mb-3">
+                  Con il tuo consenso esplicito, utilizziamo <strong>Google Analytics</strong> per 
+                  comprendere come i visitatori utilizzano il sito e migliorare l'esperienza utente.
+                </p>
+                <div className="bg-white/5 rounded-lg p-4 my-4">
+                  <h4 className="text-white font-semibold mb-2">Google Analytics</h4>
+                  <ul className="space-y-2 text-sm text-white/80">
+                    <li><strong>Fornitore:</strong> Google LLC</li>
+                    <li><strong>Finalità:</strong> Statistiche anonime sull'utilizzo del sito</li>
+                    <li><strong>Durata:</strong> Fino a 26 mesi</li>
+                    <li><strong>Cookie utilizzati:</strong> _ga, _gid, _gat</li>
+                    <li><strong>Privacy Policy:</strong>{' '}
+                      <a 
+                        href="https://policies.google.com/privacy" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-neon hover:underline"
+                      >
+                        policies.google.com/privacy
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <p className="text-white/70 text-sm mt-4">
+                  Puoi revocare il consenso in qualsiasi momento modificando le tue preferenze 
+                  nella pagina <Link href="/preferenze-cookie" className="text-neon hover:underline">Preferenze Cookie</Link>.
+                </p>
+
+                <h3 className="text-xl font-semibold text-white mt-6 mb-3">2.3 Cosa NON Utilizziamo</h3>
                 <div className="bg-white/5 rounded-lg p-4 my-4">
                   <ul className="space-y-2">
-                    <li>❌ Google Analytics o altri strumenti di analisi</li>
                     <li>❌ Cookie di profilazione pubblicitaria</li>
-                    <li>❌ Cookie di tracciamento comportamentale</li>
-                    <li>❌ Pixel di tracciamento</li>
+                    <li>❌ Cookie di tracciamento comportamentale invasivi</li>
+                    <li>❌ Pixel di tracciamento di terze parti</li>
                     <li>❌ Sistemi di remarketing</li>
+                    <li>❌ Vendita dati a broker terzi</li>
                   </ul>
                 </div>
 
-                <h3 className="text-xl font-semibold text-white mt-6 mb-3">2.3 Servizi di Terze Parti</h3>
+                <h3 className="text-xl font-semibold text-white mt-6 mb-3">2.4 Servizi di Terze Parti</h3>
                 <p>
                   Il sito integra alcuni servizi esterni che potrebbero utilizzare cookie quando 
                   li utilizzi direttamente:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>
-                    <strong>Web3Forms:</strong> servizio per il modulo di contatto. 
-                    Potrebbe utilizzare cookie temporanei per prevenire spam
+                    <strong>Google Analytics:</strong> attivo solo con il tuo consenso esplicito, 
+                    per raccogliere statistiche anonime sull'utilizzo del sito
                   </li>
                   <li>
                     <strong>Link a social media:</strong> quando visiti i nostri profili social 
@@ -177,8 +209,14 @@ export default function CookiePolicy() {
                   ePrivacy), non richiedono il tuo consenso esplicito.
                 </p>
                 <p className="mt-4 text-white/80">
-                  Qualora in futuro decidessimo di implementare cookie di analytics o tracciamento, 
-                  ti chiederemo il consenso prima della loro attivazione.
+                  <strong>Google Analytics richiede il tuo consenso esplicito.</strong> Il banner cookie 
+                  che appare alla prima visita ti permette di scegliere se accettare o rifiutare i cookie 
+                  analytics. Gli script di Google Analytics vengono caricati solo dopo che hai espresso 
+                  il consenso cliccando "Accetta" o personalizzando le tue preferenze.
+                </p>
+                <p className="mt-4 text-white/80">
+                  Puoi modificare o revocare il consenso in qualsiasi momento visitando la pagina{' '}
+                  <Link href="/preferenze-cookie" className="text-neon hover:underline">Preferenze Cookie</Link>.
                 </p>
               </section>
 
@@ -201,8 +239,8 @@ export default function CookiePolicy() {
                 </h4>
                 <p className="text-white/90 leading-relaxed">
                   Crediamo in una navigazione web semplice e rispettosa della privacy. 
-                  Per questo abbiamo scelto di non utilizzare sistemi di tracciamento o analytics. 
-                  Il tuo tempo con noi è dedicato solo alla musica!
+                  Utilizziamo Google Analytics solo se tu lo consenti, per capire meglio come migliorare 
+                  il sito. Mai profilazione, mai vendita di dati. Il tuo tempo con noi è dedicato alla musica!
                 </p>
               </div>
             </div>
