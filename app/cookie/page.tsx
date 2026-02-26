@@ -53,7 +53,7 @@ export default function CookiePolicy() {
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">1. Cosa sono i Cookie</h2>
                 <p>
                   I cookie sono piccoli file di testo che vengono memorizzati sul dispositivo 
-                  dell'utente quando visita un sito web. Permettono al sito di riconoscere 
+                  dell&apos;utente quando visita un sito web. Permettono al sito di riconoscere 
                   il dispositivo e memorizzare alcune informazioni di preferenze.
                 </p>
               </section>
@@ -71,7 +71,7 @@ export default function CookiePolicy() {
                 <p>Le informazioni che il sito può memorizzare nel tuo browser sono:</p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>
-                    <strong>Preferenze cookie:</strong> memorizza il tuo consenso all'uso dei cookie analytics (localStorage)
+                    <strong>Preferenze cookie:</strong> memorizza il tuo consenso all&apos;uso dei cookie analytics (localStorage)
                   </li>
                   <li>
                     <strong>Stato di navigazione temporaneo:</strong> mantiene la sessione 
@@ -86,7 +86,7 @@ export default function CookiePolicy() {
                 <h3 className="text-xl font-semibold text-white mt-6 mb-3">2.2 Cookie Analytics (con consenso)</h3>
                 <p className="mb-3">
                   Con il tuo consenso esplicito, utilizziamo <strong>Google Analytics</strong> per 
-                  comprendere come i visitatori utilizzano il sito e migliorare l'esperienza utente.
+                  comprendere come i visitatori utilizzano il sito e migliorare l&apos;esperienza utente.
                 </p>
                 <div className="bg-white/5 rounded-lg p-4 my-4">
                   <h4 className="text-white font-semibold mb-2">Google Analytics</h4>
@@ -131,7 +131,7 @@ export default function CookiePolicy() {
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>
                     <strong>Google Analytics:</strong> attivo solo con il tuo consenso esplicito, 
-                    per raccogliere statistiche anonime sull'utilizzo del sito
+                    per raccogliere statistiche anonime sull&apos;utilizzo del sito
                   </li>
                   <li>
                     <strong>Link a social media:</strong> quando visiti i nostri profili social 
@@ -212,7 +212,7 @@ export default function CookiePolicy() {
                   <strong>Google Analytics richiede il tuo consenso esplicito.</strong> Il banner cookie 
                   che appare alla prima visita ti permette di scegliere se accettare o rifiutare i cookie 
                   analytics. Gli script di Google Analytics vengono caricati solo dopo che hai espresso 
-                  il consenso cliccando "Accetta" o personalizzando le tue preferenze.
+                  il consenso cliccando &quot;Accetta&quot; o personalizzando le tue preferenze.
                 </p>
                 <p className="mt-4 text-white/80">
                   Puoi modificare o revocare il consenso in qualsiasi momento visitando la pagina{' '}

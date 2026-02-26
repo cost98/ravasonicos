@@ -40,8 +40,8 @@ export default function TerminiUso() {
               <section>
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">1. Accettazione dei Termini</h2>
                 <p>
-                  Accedendo e utilizzando il sito web dei Ravasonicos (di seguito "il Sito"), 
-                  l'utente accetta di essere vincolato dai presenti Termini e Condizioni d'Uso. 
+                  Accedendo e utilizzando il sito web dei Ravasonicos (di seguito &quot;il Sito&quot;), 
+                  l&apos;utente accetta di essere vincolato dai presenti Termini e Condizioni d&apos;Uso. 
                   Se non si accettano questi termini, si prega di non utilizzare il Sito.
                 </p>
               </section>
@@ -51,7 +51,7 @@ export default function TerminiUso() {
                 <p>
                   Ci riserviamo il diritto di modificare questi Termini in qualsiasi momento. 
                   Le modifiche entreranno in vigore immediatamente dopo la pubblicazione sul Sito. 
-                  L'uso continuato del Sito dopo la pubblicazione delle modifiche costituisce 
+                  L&apos;uso continuato del Sito dopo la pubblicazione delle modifiche costituisce 
                   accettazione dei nuovi Termini.
                 </p>
               </section>
@@ -60,7 +60,7 @@ export default function TerminiUso() {
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">3. Uso del Sito</h2>
                 
                 <h3 className="text-xl font-semibold text-white mt-6 mb-3">3.1 Uso Consentito</h3>
-                <p>Il Sito è fornito per uso personale e non commerciale. L'utente può:</p>
+                <p>Il Sito è fornito per uso personale e non commerciale. L&apos;utente può:</p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>Navigare e visualizzare i contenuti del Sito</li>
                   <li>Ascoltare la musica e guardare i video disponibili</li>
@@ -88,10 +88,10 @@ export default function TerminiUso() {
                   Tutti i contenuti presenti sul Sito, inclusi ma non limitati a testi, 
                   immagini, loghi, musica, video, grafica, design e codice sono di proprietà 
                   dei Ravasonicos o dei rispettivi proprietari e sono protetti dalle leggi 
-                  sul diritto d'autore e sulla proprietà intellettuale.
+                  sul diritto d&apos;autore e sulla proprietà intellettuale.
                 </p>
                 <p className="mt-4">
-                  Il nome "Ravasonicos", il logo e tutti i marchi correlati sono di proprietà 
+                  Il nome &quot;Ravasonicos&quot;, il logo e tutti i marchi correlati sono di proprietà 
                   esclusiva dei Ravasonicos.
                 </p>
               </section>
@@ -100,7 +100,7 @@ export default function TerminiUso() {
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">5. Contenuti Musicali</h2>
                 <p>
                   I brani musicali, le registrazioni audio e i video presenti sul Sito sono 
-                  forniti esclusivamente per l'ascolto personale e non commerciale. È vietato:
+                  forniti esclusivamente per l&apos;ascolto personale e non commerciale. È vietato:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>Scaricare, copiare o distribuire i brani senza autorizzazione</li>
@@ -115,7 +115,7 @@ export default function TerminiUso() {
                 <p>
                   Il Sito può contenere link a siti web di terze parti (come piattaforme di 
                   streaming musicale, social media, biglietterie). Questi link sono forniti 
-                  per comodità dell'utente. Non controlliamo né ci assumiamo responsabilità 
+                  per comodità dell&apos;utente. Non controlliamo né ci assumiamo responsabilità 
                   per il contenuto, le politiche sulla privacy o le pratiche di siti esterni.
                 </p>
               </section>
@@ -139,7 +139,7 @@ export default function TerminiUso() {
               <section>
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">8. Limitazione di Responsabilità</h2>
                 <p>
-                  Il Sito è fornito "così com'è" senza garanzie di alcun tipo. Nei limiti 
+                  Il Sito è fornito &quot;così com&apos;è&quot; senza garanzie di alcun tipo. Nei limiti 
                   consentiti dalla legge, non ci assumiamo responsabilità per:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
@@ -167,7 +167,7 @@ export default function TerminiUso() {
               <section>
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">10. Privacy</h2>
                 <p>
-                  L'uso del Sito è soggetto anche alla nostra{' '}
+                  L&apos;uso del Sito è soggetto anche alla nostra{' '}
                   <Link href="/privacy" className="text-neon hover:underline">Privacy Policy</Link>
                   {' '}e alla{' '}
                   <Link href="/cookie" className="text-neon hover:underline">Cookie Policy</Link>, 
@@ -178,7 +178,7 @@ export default function TerminiUso() {
               <section>
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">11. Risoluzione delle Controversie</h2>
                 <p>
-                  In caso di controversie relative a questi Termini o all'uso del Sito, 
+                  In caso di controversie relative a questi Termini o all&apos;uso del Sito, 
                   le parti si impegnano a tentare una risoluzione amichevole. 
                 </p>
                 <p className="mt-4">
@@ -198,8 +198,8 @@ export default function TerminiUso() {
 
                 <h3 className="text-xl font-semibold text-white mt-6 mb-3">12.2 Intero Accordo</h3>
                 <p>
-                  Questi Termini costituiscono l'intero accordo tra l'utente e i Ravasonicos 
-                  relativamente all'uso del Sito.
+                  Questi Termini costituiscono l&apos;intero accordo tra l&apos;utente e i Ravasonicos 
+                  relativamente all&apos;uso del Sito.
                 </p>
 
                 <h3 className="text-xl font-semibold text-white mt-6 mb-3">12.3 Rinuncia</h3>

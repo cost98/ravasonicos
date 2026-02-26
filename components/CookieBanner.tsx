@@ -94,7 +94,7 @@ export default function CookieBanner() {
                       </h3>
                       <p className="text-white/80 text-sm md:text-base leading-relaxed mb-2">
                         Questo sito utilizza cookie tecnici essenziali e, con il tuo consenso, Google Analytics 
-                        per comprendere come i visitatori interagiscono con il sito e migliorare l'esperienza utente. 
+                        per comprendere come i visitatori interagiscono con il sito e migliorare l&apos;esperienza utente. 
                         Non utilizziamo cookie di profilazione pubblicitaria.
                       </p>
                       <div className="flex flex-wrap gap-3 text-sm mt-3">

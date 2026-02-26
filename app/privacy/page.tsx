@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
                 <p>
                   La presente Privacy Policy descrive le modalità di raccolta, utilizzo e protezione 
                   dei dati personali degli utenti che visitano il sito web dei Ravasonicos 
-                  (di seguito "il Sito"). Ci impegniamo a proteggere la privacy dei nostri visitatori 
+                  (di seguito &quot;il Sito&quot;). Ci impegniamo a proteggere la privacy dei nostri visitatori 
                   e a rispettare le normative vigenti in materia di protezione dei dati personali, 
                   in particolare il Regolamento UE 2016/679 (GDPR) e il D.Lgs. 196/2003 (Codice Privacy italiano).
                 </p>
@@ -75,9 +75,9 @@ export default function PrivacyPolicy() {
                     (tramite protocollo mailto:) senza passare per servizi terzi
                   </li>
                   <li>
-                    <strong>Cookie Analytics (con consenso):</strong> se acconsenti all'uso di Google Analytics, 
+                    <strong>Cookie Analytics (con consenso):</strong> se acconsenti all&apos;uso di Google Analytics, 
                     raccogliamo dati anonimizzati sulla tua navigazione per comprendere come i visitatori 
-                    utilizzano il sito e migliorare l'esperienza utente. Per maggiori informazioni consulta la nostra{' '}
+                    utilizzano il sito e migliorare l&apos;esperienza utente. Per maggiori informazioni consulta la nostra{' '}
                     <Link href="/cookie" className="text-neon hover:underline">Cookie Policy</Link>
                   </li>
                   <li>
@@ -98,10 +98,10 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">4. Finalità del Trattamento</h2>
                 <p>I dati personali sono trattati per le seguenti finalità:</p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
-                  <li>Facilitare il contatto tramite il modulo (che apre il client email dell'utente)</li>
+                  <li>Facilitare il contatto tramite il modulo (che apre il client email dell&apos;utente)</li>
                   <li>Rispondere alle richieste inviate via email</li>
-                  <li>Migliorare l'esperienza di navigazione e le funzionalità del Sito</li>
-                  <li>Analizzare l'utilizzo del sito tramite Google Analytics (solo con consenso esplicito) per comprendere come i visitatori interagiscono con i contenuti e migliorare i servizi offerti</li>
+                  <li>Migliorare l&apos;esperienza di navigazione e le funzionalità del Sito</li>
+                  <li>Analizzare l&apos;utilizzo del sito tramite Google Analytics (solo con consenso esplicito) per comprendere come i visitatori interagiscono con i contenuti e migliorare i servizi offerti</li>
                   <li>Adempiere agli obblighi di legge</li>
                 </ul>
               </section>
@@ -112,7 +112,7 @@ export default function PrivacyPolicy() {
                   Il trattamento dei dati personali si basa sulle seguenti basi giuridiche:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
-                  <li><strong>Consenso dell'interessato:</strong> per l'uso di Google Analytics e cookie non tecnici (art. 6.1.a GDPR)</li>
+                  <li><strong>Consenso dell&apos;interessato:</strong> per l&apos;uso di Google Analytics e cookie non tecnici (art. 6.1.a GDPR)</li>
                   <li><strong>Esecuzione di un contratto:</strong> quando necessario per fornire i servizi richiesti</li>
                   <li><strong>Legittimo interesse del titolare:</strong> per migliorare i servizi e garantire la sicurezza del sito</li>
                   <li><strong>Adempimento di obblighi di legge:</strong> quando richiesto dalla normativa vigente</li>
@@ -133,19 +133,19 @@ export default function PrivacyPolicy() {
                   <li>
                     <strong>Dati del modulo di contatto:</strong> non vengono salvati sul server. 
                     I dati inseriti nel form vengono utilizzati solo temporaneamente per creare 
-                    il link mailto che apre il client email dell'utente
+                    il link mailto che apre il client email dell&apos;utente
                   </li>
                   <li>
-                    <strong>Email ricevute:</strong> le email inviate tramite il client dell'utente 
+                    <strong>Email ricevute:</strong> le email inviate tramite il client dell&apos;utente 
                     sono conservate fino alla conclusione della richiesta e per un massimo di 2 anni successivi
                   </li>
                   <li>
-                    <strong>Cookie Google Analytics:</strong> se acconsenti all'uso di Google Analytics, 
+                    <strong>Cookie Google Analytics:</strong> se acconsenti all&apos;uso di Google Analytics, 
                     i cookie verranno conservati per un massimo di 26 mesi secondo le policy di Google. 
                     Puoi revocare il consenso in qualsiasi momento
                   </li>
                   <li>
-                    <strong>Preferenze localStorage:</strong> conservati nel browser dell'utente fino alla 
+                    <strong>Preferenze localStorage:</strong> conservati nel browser dell&apos;utente fino alla 
                     loro cancellazione manuale
                   </li>
                 </ul>
@@ -167,7 +167,7 @@ export default function PrivacyPolicy() {
                     Questi fornitori sono vincolati da accordi di riservatezza
                   </li>
                   <li>
-                    <strong>Google Analytics:</strong> solo se acconsenti all'uso di cookie analytics, 
+                    <strong>Google Analytics:</strong> solo se acconsenti all&apos;uso di cookie analytics, 
                     Google LLC riceverà dati anonimizzati sulla navigazione per finalità statistiche. 
                     Google è certificato Privacy Shield e conforme al GDPR. 
                     Consulta la{' '}
@@ -200,9 +200,9 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">8. Diritti dell'Interessato</h2>
                 <p>In conformità al GDPR, gli utenti hanno diritto a:</p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
-                  <li><strong>Accesso:</strong> ottenere conferma dell'esistenza di dati personali e accedere ai propri dati</li>
+                  <li><strong>Accesso:</strong> ottenere conferma dell&apos;esistenza di dati personali e accedere ai propri dati</li>
                   <li><strong>Rettifica:</strong> richiedere la correzione di dati inesatti o incompleti</li>
-                  <li><strong>Cancellazione:</strong> richiedere la cancellazione dei dati (diritto all'oblio)</li>
+                  <li><strong>Cancellazione:</strong> richiedere la cancellazione dei dati (diritto all&apos;oblio)</li>
                   <li><strong>Limitazione:</strong> richiedere la limitazione del trattamento</li>
                   <li><strong>Portabilità:</strong> ricevere i dati in formato strutturato e trasferirli ad altro titolare</li>
                   <li><strong>Opposizione:</strong> opporsi al trattamento dei dati</li>
@@ -218,7 +218,7 @@ export default function PrivacyPolicy() {
                   <p className="text-white/90 text-sm">
                     Gli interessati che ritengono che il trattamento dei dati personali a loro 
                     riferiti avvenga in violazione della normativa hanno diritto di proporre reclamo 
-                    al Garante per la Protezione dei Dati Personali, come previsto dall'art. 77 del GDPR.
+                    al Garante per la Protezione dei Dati Personali, come previsto dall&apos;art. 77 del GDPR.
                   </p>
                   <p className="text-white/90 text-sm mt-3">
                     <strong>Garante per la Protezione dei Dati Personali</strong><br />
@@ -260,7 +260,7 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">11. Modifiche alla Privacy Policy</h2>
                 <p>
                   Ci riserviamo il diritto di modificare questa Privacy Policy in qualsiasi momento. 
-                  Le modifiche saranno pubblicate su questa pagina con l'indicazione della data 
+                  Le modifiche saranno pubblicate su questa pagina con l&apos;indicazione della data 
                   di aggiornamento.
                 </p>
               </section>
