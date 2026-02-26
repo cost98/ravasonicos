@@ -185,7 +185,7 @@ export default function PrivacyPolicy() {
                     autorità competenti
                   </li>
                   <li>
-                    <strong>Consenso esplicito:</strong> con il consenso esplicito dell'utente 
+                    <strong>Consenso esplicito:</strong> con il consenso esplicito dell&apos;utente 
                     per finalità specifiche
                   </li>
                 </ul>
@@ -197,7 +197,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">8. Diritti dell'Interessato</h2>
+                <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">8. Diritti dell&apos;Interessato</h2>
                 <p>In conformità al GDPR, gli utenti hanno diritto a:</p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li><strong>Accesso:</strong> ottenere conferma dell&apos;esistenza di dati personali e accedere ai propri dati</li>
@@ -207,7 +207,7 @@ export default function PrivacyPolicy() {
                   <li><strong>Portabilità:</strong> ricevere i dati in formato strutturato e trasferirli ad altro titolare</li>
                   <li><strong>Opposizione:</strong> opporsi al trattamento dei dati</li>
                   <li><strong>Revoca del consenso:</strong> revocare il consenso in qualsiasi momento</li>
-                  <li><strong>Reclamo:</strong> proporre reclamo all'autorità di controllo</li>
+                  <li><strong>Reclamo:</strong> proporre reclamo all&apos;autorità di controllo</li>
                 </ul>
                 <p className="mt-4">
                   Per esercitare questi diritti, contattare: <strong>ravasonicos@gmail.com</strong>

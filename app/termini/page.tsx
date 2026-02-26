@@ -124,7 +124,7 @@ export default function TerminiUso() {
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">7. Contenuti Generati dagli Utenti</h2>
                 <p>
                   Se inviato contenuto tramite il modulo di contatto o altri canali, 
-                  l'utente garantisce di:
+                  l&apos;utente garantisce di:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>Possedere tutti i diritti sul contenuto inviato</li>
@@ -144,7 +144,7 @@ export default function TerminiUso() {
                 </p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>Interruzioni o errori nel funzionamento del Sito</li>
-                  <li>Perdita di dati o danni derivanti dall'uso del Sito</li>
+                  <li>Perdita di dati o danni derivanti dall&apos;uso del Sito</li>
                   <li>Contenuti di siti web di terze parti</li>
                   <li>Inaccuratezza o incompletezza delle informazioni</li>
                   <li>Danni diretti, indiretti o consequenziali</li>
@@ -154,7 +154,7 @@ export default function TerminiUso() {
               <section>
                 <h2 className="text-2xl font-bold text-secondary mt-8 mb-4">9. Indennizzo</h2>
                 <p>
-                  L'utente accetta di indennizzare e manlevare i Ravasonicos da qualsiasi 
+                  L&apos;utente accetta di indennizzare e manlevare i Ravasonicos da qualsiasi 
                   richiesta, danno, perdita o spesa (incluse le spese legali) derivanti da:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 my-4">
@@ -218,7 +218,7 @@ export default function TerminiUso() {
                 <ul className="list-disc pl-6 space-y-2 my-4">
                   <li>Sospendere temporaneamente il Sito per manutenzione</li>
                   <li>Modificare o interrompere qualsiasi funzionalità</li>
-                  <li>Limitare l'accesso a determinate aree del Sito</li>
+                  <li>Limitare l&apos;accesso a determinate aree del Sito</li>
                 </ul>
               </section>
 

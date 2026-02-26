@@ -92,7 +92,7 @@ export default function CookiePolicy() {
                   <h4 className="text-white font-semibold mb-2">Google Analytics</h4>
                   <ul className="space-y-2 text-sm text-white/80">
                     <li><strong>Fornitore:</strong> Google LLC</li>
-                    <li><strong>Finalità:</strong> Statistiche anonime sull'utilizzo del sito</li>
+                    <li><strong>Finalità:</strong> Statistiche anonime sull&apos;utilizzo del sito</li>
                     <li><strong>Durata:</strong> Fino a 26 mesi</li>
                     <li><strong>Cookie utilizzati:</strong> _ga, _gid, _gat</li>
                     <li><strong>Privacy Policy:</strong>{' '}
