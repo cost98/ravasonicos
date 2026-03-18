@@ -1,9 +1,18 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt, FaEnvelope } from 'react-icons/fa';
 
 const tourDates = [
+  {
+    date: '16 Aprile 2026',
+    venue: 'Green Place',
+    city: 'Pavia (PV)',
+    address: 'Via Pastrengo 36, 27100',
+    link: 'https://www.google.com/maps/search/?api=1&query=Green+Place+Via+Pastrengo+36+Pavia',
+    flyer: '/images/locandina_evento.webp',
+  },
   {
     date: '26 Aprile 2026',
     venue: 'Il Bosco Grande',
@@ -14,6 +23,19 @@ const tourDates = [
 ];
 
 export default function Tour() {
+  const [selectedFlyer, setSelectedFlyer] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedFlyer(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, []);
+
   return (
     <section id="tour" className="py-20 px-4 bg-black relative">
       <div className="absolute inset-0 bg-grain opacity-10"></div>
@@ -44,7 +66,7 @@ export default function Tour() {
                 viewport={{ once: true }}
               >
                 <div className="relative p-6 md:p-8">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
                         <FaCalendarAlt className="text-2xl text-secondary" />
@@ -63,16 +85,17 @@ export default function Tour() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-3">
-                      <a
-                        href={show.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-cta hover:bg-cta-600 text-black font-bold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cta/30 flex items-center justify-center gap-2 whitespace-nowrap"
-                      >
-                        Info & Biglietti
-                        <FaExternalLinkAlt className="text-sm" />
-                      </a>
+                    <div className="flex flex-col items-start md:items-end gap-2 mt-1 md:mt-0">
+                      {show.flyer && (
+                        <button
+                          type="button"
+                          onClick={() => setSelectedFlyer(show.flyer)}
+                          className="group w-fit flex items-center gap-2 px-8 py-4 bg-black border-2 border-neon text-neon font-bold rounded-lg transition-all duration-300 transform hover:bg-neon hover:text-black hover:scale-105 shadow-lg shadow-neon/30 whitespace-nowrap"
+                        >
+                          Apri Locandina
+                          <FaExternalLinkAlt className="text-sm" />
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -106,6 +129,31 @@ export default function Tour() {
           </motion.div>
         </motion.div>
       </div>
+
+      {selectedFlyer && (
+        <div
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm p-4 md:p-8 flex items-center justify-center"
+          onClick={() => setSelectedFlyer(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedFlyer(null)}
+              className="ml-auto mb-3 block text-white border-2 border-white/30 hover:border-white/60 rounded-lg px-4 py-2 font-bold transition-colors duration-300"
+            >
+              Chiudi
+            </button>
+            <img
+              src={selectedFlyer}
+              alt="Locandina evento"
+              className="w-full h-auto max-h-[85vh] object-contain rounded-xl"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
