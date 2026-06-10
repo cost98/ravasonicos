@@ -6,6 +6,16 @@ import { FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt, FaEnvelope } from 're
 
 const tourDates = [
   {
+    date: '14 Giugno 2026',
+    time: '17:00',
+    venue: 'Centenario Kitchen Bar by American',
+    city: 'Trezzano sul Naviglio (MI)',
+    address: 'Parco Centenario, Via per Baggio',
+    description: 'Concerto live rock latino',
+    link: 'https://www.google.com/maps/search/?api=1&query=Parco+Centenario+Via+per+Baggio+Trezzano+sul+Naviglio',
+    flyer: '/images/evento3.webp',
+  },
+  {
     date: '16 Aprile 2026',
     venue: 'Green Place',
     city: 'Pavia (PV)',
@@ -71,12 +81,15 @@ export default function Tour() {
                       <div className="flex items-center gap-3 mb-3">
                         <FaCalendarAlt className="text-2xl text-secondary" />
                         <h3 className="text-2xl md:text-3xl font-bold text-white">
-                          {show.date}
+                          {show.date}{show.time && <span className="text-xl font-normal text-white/60 ml-3">ore {show.time}</span>}
                         </h3>
                       </div>
                       <h4 className="text-xl md:text-2xl font-semibold text-neon mb-2">
                         {show.venue}
                       </h4>
+                      {show.description && (
+                        <p className="text-white/80 italic mb-2">{show.description}</p>
+                      )}
                       <div className="flex items-start gap-2 text-white/70">
                         <FaMapMarkerAlt className="text-lg mt-1 text-primary" />
                         <div>
