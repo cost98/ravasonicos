@@ -6,6 +6,16 @@ import { FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt, FaEnvelope } from 're
 
 const tourDates = [
   {
+    date: '23 Settembre 2026',
+    time: '19:30',
+    venue: 'Social Bistrò',
+    city: 'Pavia (PV)',
+    address: 'Viale Sardegna 64, 27100',
+    description: 'Rock latino · blues · live music — ingresso libero',
+    link: 'https://www.google.com/maps/search/?api=1&query=Social+Bistro+Viale+Sardegna+64+Pavia',
+    flyer: '/images/social-bistro-23-settembre-2026.webp',
+  },
+  {
     date: '14 Giugno 2026',
     time: '17:00',
     venue: 'Centenario Kitchen Bar by American',
