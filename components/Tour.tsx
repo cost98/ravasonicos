@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt, FaEnvelope } from 'react-icons/fa';
+import { socialBistroFlyer } from './flyers/social-bistro';
 
 const tourDates = [
   {
@@ -13,7 +14,7 @@ const tourDates = [
     address: 'Viale Sardegna 64, 27100',
     description: 'Rock latino · blues · live music — ingresso libero',
     link: 'https://www.google.com/maps/search/?api=1&query=Social+Bistro+Viale+Sardegna+64+Pavia',
-    flyer: '/images/social-bistro-23-settembre-2026.webp',
+    flyer: socialBistroFlyer,
   },
   {
     date: '14 Giugno 2026',
